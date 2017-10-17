@@ -1,0 +1,126 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style3
+        {
+            color: #000099;
+        }
+        .style4
+        {
+            font-size: medium;
+        }
+        .style8
+        {
+            width: 110px;
+            font-size: medium;
+        }
+        .style9
+        {
+            width: 100%;
+        }
+        .style10
+        {
+            width: 159px;
+            font-size: xx-large;
+            font-family: Calibri;
+            text-align: center;
+            color: #660066;
+        }
+        .style11
+        {
+            width: 290px;
+            height: 250px;
+        }
+        .style12
+        {
+            width: 518px;
+        }
+        </style>
+</head>
+<body bgcolor="#ffffce" style="height: 237px">
+    <form id="form1" runat="server">
+    <div style="color: #000000; font-size: medium; font-family: Calibri;">
+        <h1>
+            <span class="style3">
+            <img alt="logo celiplus" src="imagenes/Celiplus_lila.jpg" 
+                style="height: 208px; width: 848px; text-align: center;" />&nbsp; </span></h1>
+        <span class="style4">
+        <table class="style9">
+            <tr>
+                <td class="style10">
+                    Grupo Ceres</td>
+                <td class="style12">
+                    <img alt="Grupo Ceres" class="style11" src="imagenes/ceres.png" /></td>
+            </tr>
+        </table>
+        </span><br />
+        <br />
+        &nbsp;&nbsp;<asp:Label ID="Label1" runat="server" Text="Usuario: "></asp:Label>
+        &nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="TextBox1" runat="server" ontextchanged="TextBox1_TextChanged"></asp:TextBox>
+        <br />
+        &nbsp;<asp:Label ID="Label2" runat="server" Text="Contraseña:"></asp:Label>
+        <asp:TextBox ID="TextBox2" runat="server" TextMode="Password"></asp:TextBox>
+        <br />
+        <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+        <br />
+        <asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="Entrar" />
+        <asp:Button ID="LogoOut" runat="server" onclick="LogoOut_Click" 
+            Text="Cerrar Sesión" Width="105px" />
+        <br />
+        <br />
+        <br />
+    </div>
+    <asp:Panel ID="Panel1" runat="server" Height="288px" Width="793px">
+        <table style="width:100%; height: 243px;">
+            <tr>
+                <td class="style8">
+                    <asp:HyperLink ID="Menu" runat="server" 
+                        NavigateUrl="~/planificarMenu.aspx">Menús</asp:HyperLink>
+                    <br />
+                    <asp:HyperLink ID="Recetas" runat="server" NavigateUrl="~/subirReceta.aspx">Subir Receta</asp:HyperLink>
+                    <br />
+                    <asp:HyperLink ID="Privilegios" runat="server" 
+                        NavigateUrl="~/cambiarPrivilegios.aspx">Privilegios</asp:HyperLink>
+                    <br />
+                    <asp:HyperLink ID="AceptarReceta" runat="server" 
+                        NavigateUrl="~/AceptarReceta.aspx" Target="_parent">Revisar Recetas</asp:HyperLink>
+                    <br />
+                    <asp:HyperLink ID="MensajePrivado" runat="server" 
+                        NavigateUrl="~/MensajePrivado.aspx">Enviar Mensaje</asp:HyperLink>
+                    <br />
+                    <asp:HyperLink ID="Alta" runat="server" NavigateUrl="~/DarAltaUsuario.aspx">Registrarse</asp:HyperLink>
+                    <br />
+                    <asp:HyperLink ID="MensajesRecibidos" runat="server" 
+                        NavigateUrl="~/verMensajesPrivados.aspx">Mensajes recibidos</asp:HyperLink>
+                    <br />
+                    <asp:HyperLink ID="verForo" runat="server" NavigateUrl="~/verForoHilos.aspx">Foro</asp:HyperLink>
+                    <br />
+                    <asp:HyperLink ID="ValidarReceta" runat="server" 
+                        NavigateUrl="~/ValidarReceta.aspx">Validar Receta</asp:HyperLink>
+                    <br />
+                    <asp:HyperLink ID="ValorarReceta" runat="server" 
+                        NavigateUrl="~/ValorarReceta.aspx">Valorar Receta</asp:HyperLink>
+                    <br />
+                    <asp:HyperLink ID="AñadirProducto" runat="server" 
+                        NavigateUrl="~/DarAltaProducto.aspx">Añadir Producto</asp:HyperLink>
+                    <br />
+                    <asp:HyperLink ID="VerCatalogo" runat="server" NavigateUrl="~/verCatalogo.aspx">Ver Catálogo</asp:HyperLink>
+                </td>
+                <td>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+        </table>
+    </asp:Panel>
+    </form>
+</body>
+</html>
